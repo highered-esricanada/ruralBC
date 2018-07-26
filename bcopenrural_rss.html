@@ -1,0 +1,27 @@
+<html>
+  <head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script type='text/javascript'>
+	$.ajax({
+		url: "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%20%3D'https%3A%2F%2Fwww.ruralopendata.ca%2Farticles%2Ffeed%2F'&format=xml&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys'",
+		type: "GET",
+		dataType: "xml",
+		success: function(data){
+			var inner = '';
+		    $(data).find("item").each(function () { // or "item" or whatever suits your feed
+		        var el = $(this);
+		        inner += '<p style="font-weight:bold;font-size:14pt;">' + el.find("title").text() + '</p>' 
+		        				+ '<p style="font-style:italic;"><a href="' + el.find("link").text() + '">' + el.find("link").text() + '</a></p>'
+		        				+ '<p style="">' + (el.find("description").text()).substring(0,200).replace(/<[^>]*>/g, '') + '...</p>'
+		        				+ '----------------------------------------------------------</ br>';
+		    });
+		    document.getElementById('container').innerHTML = inner;
+		},
+	});
+    </script>
+  </head>
+  <body>
+  	<div id="container" style="height:500px;overflow-y:scroll;border: 1px solid;"></div>
+  </body>
+</html>
