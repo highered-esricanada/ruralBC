@@ -5,17 +5,28 @@
 <script src="https://js.arcgis.com/3.24/"></script>
 
 <style>
+/*
+This CSS resource incorporates links to font software which is the valuable copyrighted
+property of Monotype Imaging and/or its suppliers. You may not attempt to copy, install,
+redistribute, convert, modify or reverse engineer this font software. Please contact Monotype
+Imaging with any questions regarding Web Fonts:  http://webfonts.fonts.com
+*/
+@font-face{
+	font-family:"Avenir LT W02_35 Light";
+	src:url("https://sg.esri.ca/moodle/fonts/724320/99db2616-e717-4838-a896-6dc86e37b49e.eot?#iefix");
+	src:url("https://sg.esri.ca/moodle/fonts/724320/99db2616-e717-4838-a896-6dc86e37b49e.eot?#iefix")format("eot"),url("https://sg.esri.ca/moodle/fonts/724320/90dfc06d-7526-4e7d-8c27-040089461039.woff2") format("woff2"),url("https://sg.esri.ca/moodle/fonts/724320/874c8a3d-82cd-4b46-839b-521b49950be0.woff") format("woff"),url("https://sg.esri.ca/moodle/fonts/724320/651041f0-000d-42ca-b667-939a4e0f5085.ttf") format("truetype"),url("https://sg.esri.ca/moodle/fonts/724320/bb5e727f-dfd2-4e7c-8630-4dd73720a377.svg#bb5e727f-dfd2-4e7c-8630-4dd73720a377") format("svg");
+}
+		
 #newdatasets {
   border-right: 1px solid #000;
   padding: 0 0 1em 0;
   margin-bottom: 1em;
-  font-family: 'Trebuchet MS', 'Lucida Grande',
+  font-family: 'Avenir LT W02_35 Light', 'Trebuchet MS', 'Lucida Grande',
    Verdana, Lucida, Geneva, Helvetica, 
    Arial, sans-serif;
   background-color: #90bade;
   color: #333;
 }
-
 #newdatasets ul {
   list-style: none;
   margin: 0;
@@ -27,7 +38,6 @@
   border-bottom: 1px solid #90bade;
   margin: 0;
 }
-
 #newdatasets li a {
   display: block;
   padding: 5px 5px 5px 0.5em;
@@ -39,7 +49,6 @@
   width: 100%;
 } html>body #newdatasets li a {
   width: auto;
-
 } #newdatasets li a:hover {
   border-left: 10px solid #1c64d1;
   border-right: 10px solid #5ba3e0;
@@ -60,10 +69,8 @@ function(arcgisPortal, JSON) {
     "August", "September", "October",
     "November", "December"
   ];
-
   var UNIX_today = Math.round((new Date()).getTime());
   var UNIX_90daysago = UNIX_today - (86400000 * 90);
-
   var portal = new arcgisPortal.Portal('http://www.arcgis.com');
   var params = {
     q: 'orgid: d2AjSFw01XGyHQgE AND type:map', // AND uploaded: [0000001519862400000 TO 0000001527724800000]',
@@ -75,20 +82,27 @@ function(arcgisPortal, JSON) {
   portal.queryItems(params).then(function(result){
   	console.log(result);
   	dataset = result.results;
-
 	var newdatasets = '';
 	newdatasets += '<ul>'
-
 	for(var x=0;x<dataset.length;x++){
 	  newdatasets += '<li><a href="https://ruralbc.maps.arcgis.com/home/item.html?id=' + dataset[x].id + '" target="_blank">' + dataset[x].title + '<br />';
 	  newdatasets += 'Uploaded by: ' + dataset[x].owner + '<br />';
 	  newdatasets += 'Last Updated: ' + dataset[x].modified.getDate() + ' ' +  monthNames[dataset[x].modified.getMonth()] + ' ' + dataset[x].modified.getFullYear() + '</a></li>';
 	}; 
-
 	newdatasets += '</ul>';
 	document.getElementById("newdatasets").innerHTML = newdatasets;
   });
 });
+var MTUserId='8cdcf1fd-4002-4137-881a-8121dafb0583';
+var MTFontIds = new Array();
+MTFontIds.push("724320"); // Avenir® W02 35 Light 
+(function() {
+var mtTracking = document.createElement('script');
+mtTracking.type='text/javascript';
+mtTracking.async='true';
+mtTracking.src=('https:'==document.location.protocol?'https:':'http:')+'//fast.fonts.net/lt/trackingCode.js';
+(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(mtTracking);
+})();
 </script>
 
 
