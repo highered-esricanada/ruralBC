@@ -2,6 +2,18 @@
 <head>
 
 <style>
+/*
+This CSS resource incorporates links to font software which is the valuable copyrighted
+property of Monotype Imaging and/or its suppliers. You may not attempt to copy, install,
+redistribute, convert, modify or reverse engineer this font software. Please contact Monotype
+Imaging with any questions regarding Web Fonts:  http://webfonts.fonts.com
+*/
+@font-face{
+	font-family:"Avenir LT W02_35 Light";
+	src:url("https://sg.esri.ca/moodle/fonts/724320/99db2616-e717-4838-a896-6dc86e37b49e.eot?#iefix");
+	src:url("https://sg.esri.ca/moodle/fonts/724320/99db2616-e717-4838-a896-6dc86e37b49e.eot?#iefix")format("eot"),url("https://sg.esri.ca/moodle/fonts/724320/90dfc06d-7526-4e7d-8c27-040089461039.woff2") format("woff2"),url("https://sg.esri.ca/moodle/fonts/724320/874c8a3d-82cd-4b46-839b-521b49950be0.woff") format("woff"),url("https://sg.esri.ca/moodle/fonts/724320/651041f0-000d-42ca-b667-939a4e0f5085.ttf") format("truetype"),url("https://sg.esri.ca/moodle/fonts/724320/bb5e727f-dfd2-4e7c-8630-4dd73720a377.svg#bb5e727f-dfd2-4e7c-8630-4dd73720a377") format("svg");
+}
+
 *{
   margin: 0;
   padding: 0;
@@ -10,7 +22,7 @@
 }
 h1{
   font-size: 1rem;
-  font-family: 'Montserrat';
+  font-family: 'Avenir LT W02_35 Light', Arial;
   font-weight: normal;
   color: #444;
   text-align: center;
@@ -102,7 +114,7 @@ h1{
     position: absolute;
     left: 0;
     width: 100%;
-    padding: 1rem;
+    /*padding: 1rem;*/
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     outline: 1px solid transparent;
@@ -153,11 +165,31 @@ h1{
 }
 .front .inner span{
   color: rgba(255,255,255,0.7);
-  font-family: 'Montserrat';
+  font-family: 'Avenir LT W02_35 Light', Arial;
   font-weight: 300;
 }
 
+.front .inner p, .back .inner p {
+  font-family: 'Avenir LT W02_35 Light', Arial;
+  color: rgb(255,255,255);
+}
+
 </style>
+<script type="text/javascript">
+var MTUserId='8cdcf1fd-4002-4137-881a-8121dafb0583';
+var MTFontIds = new Array();
+
+MTFontIds.push("724320"); // Avenir® W02 35 Light 
+(function() {
+var mtTracking = document.createElement('script');
+mtTracking.type='text/javascript';
+mtTracking.async='true';
+mtTracking.src=('https:'==document.location.protocol?'https:':'http:')+'//fast.fonts.net/lt/trackingCode.js';
+
+(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(mtTracking);
+})();
+
+</script>
 </head>
 
 <body>			
@@ -165,7 +197,7 @@ h1{
 <div class="wrapper">
   	<div class="cols">
 		<div class="col" ontouchstart="this.classList.toggle('hover');">
-			<a href="http://data-ruralbc.opendata.arcgis.com/datasets?q=agriculture" target="_top">
+			<a href="//data-ruralbc.opendata.arcgis.com/datasets?q=agriculture" target="_top">
 				<div class="container">
 					<div class="front" style="background-image: url(agriculture.jpg)">
 						<div class="inner">
@@ -183,7 +215,7 @@ h1{
 		</div>
 		
 		<div class="col" ontouchstart="this.classList.toggle('hover');">
-			<a href="http://data-ruralbc.opendata.arcgis.com/datasets?q=Boundaries" target="_top">
+			<a href="//data-ruralbc.opendata.arcgis.com/datasets?q=Boundaries" target="_top">
 				<div class="container">
 					<div class="front" style="background-image: url(boundaries.jpg)">
 						<div class="inner">
@@ -200,7 +232,7 @@ h1{
 			</a>			
 		</div>
 		<div class="col" ontouchstart="this.classList.toggle('hover');">
-			<a href="http://data-ruralbc.opendata.arcgis.com/datasets?q=Business" target="_top">			
+			<a href="//data-ruralbc.opendata.arcgis.com/datasets?q=Business" target="_top">			
 				<div class="container">
 					<div class="front" style="background-image: url(business.jpg)">
 						<div class="inner">
@@ -217,7 +249,7 @@ h1{
 			</a>			
 		</div>
 		<div class="col" ontouchstart="this.classList.toggle('hover');">
-			<a href="http://data-ruralbc.opendata.arcgis.com/datasets?q=safety" target="_top">			
+			<a href="//data-ruralbc.opendata.arcgis.com/datasets?q=safety" target="_top">			
 				<div class="container">
 					<div class="front" style="background-image: url(safety.jpg)">
 						<div class="inner">
@@ -234,7 +266,7 @@ h1{
 			</a>			
 		</div>
 		<div class="col" ontouchstart="this.classList.toggle('hover');">
-			<a href="http://data-ruralbc.opendata.arcgis.com/datasets?q=Education" target="_top">			
+			<a href="//data-ruralbc.opendata.arcgis.com/datasets?q=Education" target="_top">			
 				<div class="container">
 					<div class="front" style="background-image: url(education.jpg)">
 						<div class="inner">
@@ -251,7 +283,7 @@ h1{
 			</a>			
 		</div>
 		<div class="col" ontouchstart="this.classList.toggle('hover');">
-			<a href="http://data-ruralbc.opendata.arcgis.com/datasets?q=Health" target="_top">			
+			<a href="//data-ruralbc.opendata.arcgis.com/datasets?q=Health" target="_top">			
 				<div class="container">
 					<div class="front" style="background-image: url(health.jpg)">
 						<div class="inner">
@@ -268,7 +300,7 @@ h1{
 			</a>			
 		</div>
 		<div class="col" ontouchstart="this.classList.toggle('hover');">
-			<a href="http://data-ruralbc.opendata.arcgis.com/datasets?q=Housing" target="_top">			
+			<a href="//data-ruralbc.opendata.arcgis.com/datasets?q=Housing" target="_top">			
 				<div class="container">
 					<div class="front" style="background-image: url(housing.jpg)">
 						<div class="inner">
@@ -285,7 +317,7 @@ h1{
 			</a>			
 		</div>
 		<div class="col" ontouchstart="this.classList.toggle('hover');">
-			<a href="http://data-ruralbc.opendata.arcgis.com/datasets?q=Transportation" target="_top">			
+			<a href="//data-ruralbc.opendata.arcgis.com/datasets?q=Transportation" target="_top">			
 				<div class="container">
 					<div class="front" style="background-image: url(transportation.jpg)">
 						<div class="inner">
