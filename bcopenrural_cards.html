@@ -108,8 +108,8 @@ h1{
 	width: 170px;
 }
 .inner{
-    -webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
-            transform: translateY(-50%) translateZ(60px) scale(0.94);
+    -webkit-transform: translateY(-50%) translateZ(1px);
+            transform: translateY(-50%) translateZ(1px);
     top: 50%;
     position: absolute;
     left: 0;
@@ -322,6 +322,23 @@ mtTracking.src=('https:'==document.location.protocol?'https:':'http:')+'//fast.f
 					<div class="front" style="background-image: url(transportation.jpg)">
 						<div class="inner">
 							<p>Transportation</p>
+	          				<span>Short Description</span>
+						</div>
+					</div>
+					<div class="back">
+						<div class="inner">
+						  	<p>Examples</p>
+						</div>
+					</div>
+				</div>
+			</a>			
+		</div>
+		<div class="col" ontouchstart="this.classList.toggle('hover');">
+			<a href="//data-ruralbc.opendata.arcgis.com/datasets?t=water" target="_top">			
+				<div class="container">
+					<div class="front" style="background-image: url(water.jpg)">
+						<div class="inner">
+							<p>Water</p>
 	          				<span>Short Description</span>
 						</div>
 					</div>
