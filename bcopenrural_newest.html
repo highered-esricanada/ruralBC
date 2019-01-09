@@ -73,8 +73,10 @@ function(arcgisPortal, JSON) {
   var UNIX_90daysago = UNIX_today - (86400000 * 90);
   var portal = new arcgisPortal.Portal('http://www.arcgis.com');
   var params = {
-    q: 'orgid: d2AjSFw01XGyHQgE AND type:map', // AND uploaded: [0000001519862400000 TO 0000001527724800000]',
-    sortField: 'updated',
+    // Ignore Hub pages and the "Open Data for Open Government" Survey123 questionnaire
+    q: 'orgid: d2AjSFw01XGyHQgE AND NOT group:330684e3193045c2b5a71c7fad419ec9 AND NOT title:"Open Data for Open Government"', // AND uploaded: [0000001519862400000 TO 0000001527724800000]',
+    sortField: 'modified',
+	sortOrder: 'desc',
     start: 1,
     num: 5
     //orgid: 2350126402
