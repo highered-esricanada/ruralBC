@@ -18,8 +18,9 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <script type='text/javascript'>
+	// Based on http://stackoverflow.com/questions/10943544/how-to-parse-an-rss-feed-using-javascript
 	$.ajax({
-		url: "https://sg.esri.ca/ruralbc/index.php?q=%9C%B9%BF%DA%CD%8E%7B%89%C2%CB%BE%83%9D%A7%E2%D4%9C%A8%CA%B8%C7%BC%B4%AB%B7%7C%9C%C8a%9A%A6%C8%9B%D9%9D%A9%C0%86%CC%CA%B8%A5%A2",
+		url: "https://hgisportal.esri.ca/ruralbc/proxy.ashx?https://www.ruralopendata.ca/articles/feed/",
 		type: "GET",
 		dataType: "xml",
 		success: function(data){
@@ -29,7 +30,7 @@
 		        inner += '<p style="font-weight:bold;font-size:14pt;">' + el.find("title").text() + '</p>' 
 		        				+ '<p style="font-style:italic;"><a href="' + el.find("link").text() + '">' + el.find("link").text() + '</a></p>'
 		        				+ '<p style="">' + (el.find("description").text()).substring(0,200).replace(/<[^>]*>/g, '') + '...</p>'
-		        				+ '----------------------------------------------------------</ br>';
+		        				+ '<hr /></ br>';
 		    });
 		    document.getElementById('container').innerHTML = inner;
 		},
