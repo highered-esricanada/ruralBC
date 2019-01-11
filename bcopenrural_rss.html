@@ -20,8 +20,9 @@
 			font-family: 'Avenir LT W02_35 Light', Arial;
 			padding: 10px;
 		}
-		p {
+		div.entry {
 			margin: 8px;
+			border-bottom: 1px solid #999;
 		}
 		p.title {
 			font-weight: bold;
@@ -29,6 +30,13 @@
 		}
 		p.link {
 			font-style: italic;
+		}
+		img.thumbnail {
+			width: 80px;
+			margin: 0 15px 1em 0;
+		}
+		td.description {
+			vertical-align: top;
 		}
 		hr {
 			margin: 20px 8px;
@@ -47,10 +55,12 @@
 			var inner = '';
 		    $(data).find("item").each(function () { // or "item" or whatever suits your feed
 		        var el = $(this);
-		        inner += '<p class="title">' + el.find("title").text() + '</p>' 
+		        inner += '<div class="entry">'
+					+ '<p class="title">' + el.find("title").text() + '</p>' 
 					+ '<p class="link"><a href="' + el.find("link").text() + '" target="_blank">' + el.find("link").text() + '</a></p>'
-		        	+ '<p>' + (el.find("description").text()).substring(0,200).replace(/<[^>]*>/g, '') + '...</p>'
-		        	+ '<p><hr /></p></ br>';
+					+ '<table width="100%"><tr><td><img src="' + el.find("enclosure")[0].attributes.url.value.replace("http://localhost", "https://www.ruralopendata.ca") + '" class="thumbnail" /></td>'
+					+ '<td class="description"><p>' + (el.find("description").text()).substring(0,1000).replace(/(<[^>]*>)+/g, ' ').substring(0,200) + '...</p></td></tr></table>'
+					+ '</div>'
 		    });
 		    document.getElementById('container').innerHTML = inner;
 		},
